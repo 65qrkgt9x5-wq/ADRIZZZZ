@@ -7,6 +7,7 @@
 header {
     background-color: black;
     display: flex;
+    
 }
 
 header h1 {
@@ -52,6 +53,9 @@ a {
     /* Optionnel : ombre pour le détacher du reste */
     box-shadow: 0 4px 6px rgba(139, 139, 139, 0.692); 
     border-radius: 4px;
+    position: sticky;  /* Active le mode "collant" */
+    top: 5px;            /* Se colle à 0 pixel du haut de l'écran */
+    z-index: 2000;
 }
 
 /* Le texte qui bouge */
