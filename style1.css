@@ -106,3 +106,15 @@ main {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+
+@media screen and (max-width: 768px) {
+    
+    .article p {
+        display: none;
+    }
+
+    .article:focus p {
+        display : block
+    }
+}
