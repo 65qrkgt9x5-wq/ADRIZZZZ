@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 header {
@@ -11,10 +15,26 @@ header {
 }
 
 header h1 {
-    color: red;
     margin: auto;
     font-family: "Poppins", sans-serif;
     font-size: 3em;
+    background: linear-gradient(90deg, rgba(255,51,0,1) 0%, rgb(0, 157, 255) 50%, rgba(255,51,0,1) 100%);
+    background-size: 200% auto;
+    /* 3. Découpage du texte */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+
+    /* 4. L'animation : nom, durée (3s), infinie, linéaire */
+    animation: shine 3s linear infinite;
+}
+
+/* 5. La définition du mouvement */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 ul {
   display: flex;
@@ -53,6 +73,7 @@ a {
     /* Optionnel : ombre pour le détacher du reste */
     box-shadow: 0 4px 6px rgba(139, 139, 139, 0.692); 
     border-radius: 4px;
+    position: fixed;
     position: sticky;  /* Active le mode "collant" */
     top: 5px;            /* Se colle à 0 pixel du haut de l'écran */
     z-index: 2000;
@@ -93,8 +114,9 @@ main {
     margin-bottom: 20px;
     margin-right: 20px;
     overflow: hidden;
-    border-radius : 5px;
-    transition : 0.5s
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-color: white;
 }
 
 .article img.article-image {
@@ -109,7 +131,14 @@ main {
 .article:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-image: linear-gradient(white, white), linear-gradient(90deg, rgba(255, 51, 0, 1) 0%, rgba(0, 85, 255, 1) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition : 0.5s
+    
 }
+
+
 
 @media screen and (max-width: 1000px) {
     
@@ -124,3 +153,65 @@ main {
         width: 100%;     /* On s'assure qu'ils prennent toute la largeur dispo */
     }
 }
+/* -----trait ------- */
+.ligne-degrade {
+    /* 1. On nettoie le style par défaut (le petit trait gris moche) */
+    border: 0;
+    
+    /* 2. On donne une épaisseur au trait */
+    height: 3px; 
+    
+    /* 3. On applique votre dégradé */
+    background: linear-gradient(90deg, rgba(255, 51, 0, 1) 0%, rgba(0, 85, 255, 1) 100%);
+    
+    /* 4. Un peu d'espace avant et après */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    /* Optionnel : coins arrondis sur le trait */
+    border-radius: 5px;
+}
+
+/* ----------- ajout -------- */
+
+
+.whatsapp-link {
+    /* 1. Votre dégradé Orange vers Bleu */
+    background: linear-gradient(90deg, rgba(255, 51, 0, 1) 0%, rgba(0, 85, 255, 1) 100%);
+    
+    /* 2. L'astuce pour l'animation : on fait le fond 2x plus grand */
+    background-size: 200% auto;
+    
+    color: white;              /* Texte blanc */
+    padding: 12px 25px;        /* Un peu plus d'espace pour que ça respire */
+    border-radius: 50px;       /* Bords très arrondis (pill shape) */
+    font-weight: bold;
+    text-decoration: none;     /* Pas de soulignement */
+    display: inline-block;     
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    
+    /* 3. La transition gère le zoom ET le mouvement du dégradé */
+    transition: 0.5s;
+    
+    /* Optionnel : une ombre bleue légère pour faire briller */
+    box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+}
+
+.whatsapp-link:hover {
+    /* Au survol, on déplace le fond vers la droite (l'effet de glissement) */
+    background-position: right center;
+    
+    /* Le petit zoom */
+    transform: scale(1.05);
+    
+    /* On renforce l'ombre */
+    box-shadow: 0 6px 20px rgba(0, 85, 255, 0.5);
+}
+
+.ajout {
+    text-align: center;
+    border-top: 2px;
+}
+
+
