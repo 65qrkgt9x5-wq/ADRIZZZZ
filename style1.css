@@ -107,14 +107,16 @@ main {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     
-    .article p {
-        display: none;
+    /* On change la direction du conteneur parent */
+    .articles {
+        flex-direction: column; /* Passe de l'horizontal (row) à la verticale */
     }
 
-    .article:focus p {
-        display : block
+    /* On ajuste les articles individuels */
+    .article {
+        margin-right: 0; /* On enlève la marge droite qui ne sert plus à rien */
+        width: 100%;     /* On s'assure qu'ils prennent toute la largeur dispo */
     }
 }
